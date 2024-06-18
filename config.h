@@ -161,7 +161,7 @@ static unsigned int cursorshape = 2;
  */
 
 static unsigned int cols = 150;
-static unsigned int rows = 30;
+static unsigned int rows = 38;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -217,6 +217,10 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+        { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = 1} },
+        { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = 1} },
+        { ControlMask|ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+        { ControlMask|ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ACMPL_MOD,            XK_slash,       autocomplete,   { .i = ACMPL_WORD        } },
 	{ ACMPL_MOD,            XK_period,      autocomplete,   { .i = ACMPL_FUZZY_WORD  } },
